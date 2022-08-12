@@ -18,13 +18,21 @@ ACmix refers: https://github.com/LeapLabTHU/ACmix
 ### 参考
 
 Swin-Transformer: 
+
 github: https://github.com/microsoft/Swin-Transformer
+
 paper: https://arxiv.org/pdf/2103.14030.pdf
 
 Vedio-Swin-Transformer:
+
 github: https://github.com/SwinTransformer/Video-Swin-Transformer
+
 paper: https://arxiv.org/pdf/2106.13230.pdf
 
+
 ACmix:
+
 github: https://github.com/LeapLabTHU/ACmix
+
 paper: https://arxiv.org/pdf/2111.14556.pdf
+
