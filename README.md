@@ -16,20 +16,21 @@ ACmix refers: https://github.com/LeapLabTHU/ACmix
 欢迎大家提issue！谢谢！
 
 ### 更新日志：
+- 2022.08.12：添加了Swin-Transformer-ACmix-1D的实现，参考[3]实现。
 - 2022.08.14：添加了Swin-Transformer-V2-1D的实现，参考MSRA版本的V2代码实现。
 
 ### 参考
 
-Swin-Transformer: <br />
+[1] Swin-Transformer: <br />
 github: https://github.com/microsoft/Swin-Transformer <br />
 paper: https://arxiv.org/pdf/2103.14030.pdf
 
-Vedio-Swin-Transformer: <br />
+[2] Vedio-Swin-Transformer: <br />
 github: https://github.com/SwinTransformer/Video-Swin-Transformer<br />
 paper: https://arxiv.org/pdf/2106.13230.pdf
 
 
-ACmix: <br />
+[3] ACmix: <br />
 github: https://github.com/LeapLabTHU/ACmix <br />
 paper: https://arxiv.org/pdf/2111.14556.pdf
 
