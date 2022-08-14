@@ -103,11 +103,10 @@ def window_reverse(windows, window_size, L):
     Args:
         windows: (num_windows*B, window_size, window_size, C)
         window_size (int): Window size
-        H (int): Height of image
-        W (int): Width of image
+        L (int): Sequence length
 
     Returns:
-        x: (B, H, W, C)
+        x: (B, L, C)
     """
     B = int(windows.shape[0] / (L / window_size))
     x = windows.view(B, L // window_size, window_size, -1)
@@ -154,7 +153,7 @@ class WindowAttention1D(nn.Module):
         relative_coords[:, :, 0] += self.window_size - \
             1  # shift to start from 0
         # relative_coords[:, :, 0] *= 2 * self.window_size[1] - 1
-        relative_position_index = relative_coords.sum(-1)  # Wh*Ww, Wh*Ww
+        relative_position_index = relative_coords.sum(-1)  # Wl, Wl
         self.register_buffer("relative_position_index",
                              relative_position_index)
 
