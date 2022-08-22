@@ -13,11 +13,14 @@ ACmix refers: https://github.com/LeapLabTHU/ACmix
 
 出于项目需要，因此需要实现1D的ST，受到Vedio-Swin-Transformer（下称VST）启发，VST实现了3D的窗口自注意力（window attention）以及3D的掩码（mask）设置。本ST-1D除了实现所有ST的功能，并添加了对于序列长度不能整除窗口长度（window size）需要补零的功能，并将其考虑进窗口自注意力以及掩码的设计中。
 
-欢迎大家提issue！谢谢！
+未来会陆续增加热点模型的1D实现（指追随着CV的顶会），不再增加新的Repositories。
+
+欢迎大家提issue！欢迎大家点star！谢谢！
 
 ### 更新日志：
 - 2022.08.12：添加了Swin-Transformer-ACmix-1D的实现，参考[3]实现。
 - 2022.08.14：添加了Swin-Transformer-V2-1D的实现，参考MSRA版本的V2代码实现。
+- 2022.08.22：添加了Sliced Recursive Transformer 1D的实现，参考CMU & MBZUAI[4]的版本实现。
 
 ### 参考
 
@@ -29,8 +32,10 @@ paper: https://arxiv.org/pdf/2103.14030.pdf
 github: https://github.com/SwinTransformer/Video-Swin-Transformer<br />
 paper: https://arxiv.org/pdf/2106.13230.pdf
 
-
 [3] ACmix: <br />
 github: https://github.com/LeapLabTHU/ACmix <br />
 paper: https://arxiv.org/pdf/2111.14556.pdf
 
+[4] Sliced Recursive Transformer (SReT): <br />
+github: https://github.com/szq0214/SReT <br />
+paper: https://arxiv.org/abs/2111.05297
