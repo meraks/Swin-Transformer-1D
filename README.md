@@ -12,7 +12,7 @@
 
 欢迎大家提issue！欢迎大家点star！谢谢！
 
-### 更新日志：
+### 更新日志
 - 2022.08.12：添加了Swin-Transformer-ACmix-1D的实现，参考[3]实现。
 - 2022.08.14：添加了Swin-Transformer-V2-1D的实现，参考MSRA版本的V2代码实现。
 - 2022.08.22：添加了Sliced Recursive Transformer 1D的实现，参考CMU & MBZUAI[4]的版本实现。
