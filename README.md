@@ -2,7 +2,7 @@
 
 这是Swin-Transformer（下称ST） 1D的实现，参考了[MSRA版本的原始ST](https://github.com/microsoft/Swin-Transformer)以及[Vedio-Swin-Transformer版本](https://github.com/SwinTransformer/Video-Swin-Transformer)实现的。
 
-出于项目需要，因此需要实现1D的ST，受到Vedio-Swin-Transformer（下称VST）启发，VST实现了3D的窗口自注意力（window attention）以及3D的掩码（mask）设置。本ST-1D除了实现所有ST的功能，并添加了对于序列长度不能整除窗口长度（window size）需要补零的功能，并将其考虑进窗口自注意力以及掩码的设计中。
+受到Vedio-Swin-Transformer（下称VST）启发，VST实现了3D的窗口自注意力（window attention）以及3D的掩码（mask）设置。本ST-1D除了实现所有ST的功能，并添加了对于序列长度不能整除窗口长度（window size）需要补零的功能，并将其考虑进窗口自注意力以及掩码的设计中。
 
 目前包括的模型：
 1. Swin-Transformer: ST-V1、ST-V2及ST-ACmix。
