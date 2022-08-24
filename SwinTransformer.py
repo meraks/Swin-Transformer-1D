@@ -325,7 +325,7 @@ class PatchMerging(nn.Module):
         """ Forward function.
 
         Args:
-            x: Input feature, tensor size (B, D, H, W, C).
+            x: Input feature, tensor size (B, L, C).
         """
         B, L, C = x.shape
 
