@@ -1,0 +1,18 @@
+# avoid vscode
+.vscode
+
+# pythone cache
+__pycache__
+
+# Platform specified files.
+.DS_Store
+
+# Common code editors.
+.atom/
+.idea/
+.fleet/
+*.iml
+*.ipr
+*.iws
+*.sln
+*.swp
