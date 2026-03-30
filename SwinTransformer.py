@@ -346,28 +346,21 @@ class PatchMerging(nn.Module):
 
 def compute_mask(L, window_size, shift_size, device):
     Lp = int(np.ceil(L / window_size)) * window_size
-    img_mask = torch.zeros((1, Lp, 1), device=device)  # 1 Lp 1
-    pad_size = int(Lp - L)
-    if (pad_size == 0) or (pad_size + shift_size == window_size):
-        segs = (slice(-window_size), slice(-window_size, -
-                shift_size), slice(-shift_size, None))
-    elif pad_size + shift_size > window_size:
-        seg1 = int(window_size * 2 - L + shift_size)
-        segs = (slice(-seg1), slice(-seg1, -window_size),
-                slice(-window_size, -shift_size), slice(-shift_size, None))
-    elif pad_size + shift_size < window_size:
-        seg1 = int(window_size * 2 - L + shift_size)
-        segs = (slice(-window_size), slice(-window_size, -seg1),
-                slice(-seg1, -shift_size), slice(-shift_size, None))
-    cnt = 0
-    for d in segs:
-        img_mask[:, d, :] = cnt
-        cnt += 1
+    img_mask = torch.zeros((1, Lp, 1), device=device)
+    
+    segs = (
+        slice(0, -window_size), 
+        slice(-window_size, -shift_size), 
+        slice(-shift_size, None) 
+    )
+    
+    for cnt, s in enumerate(segs):
+        img_mask[:, s, :] = cnt
+    
     mask_windows = window_partition(img_mask, window_size)  # nW, ws, 1
-    mask_windows = mask_windows.squeeze(-1)  # nW, ws
+    mask_windows = mask_windows.squeeze(-1)                 # nW, ws
     attn_mask = mask_windows.unsqueeze(1) - mask_windows.unsqueeze(2)
-    attn_mask = attn_mask.masked_fill(
-        attn_mask != 0, float(-100.0)).masked_fill(attn_mask == 0, float(0.0))
+    attn_mask = attn_mask.masked_fill(attn_mask != 0, -100.0).masked_fill(attn_mask == 0, 0.0)
     return attn_mask
 
 
